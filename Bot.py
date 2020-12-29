@@ -33,7 +33,7 @@ class MyClient(discord.Client):
         #         await message.channel.send('그래서 뭐')
 
 client = MyClient()
-client.run('NzkzNDk0MjQ0NTU0OTY0OTky.X-tFGg.cr6HbZkJO47du3pCjMxZGuCHudI')
+client.run('token')
 
 ################################################################################
 
@@ -45,7 +45,7 @@ bot = commands.Bot(command_prefix='>')
 async def ping(ctx):
     await ctx.send('pong')
 
-bot.run('NzkzNDk0MjQ0NTU0OTY0OTky.X-tFGg.cr6HbZkJO47du3pCjMxZGuCHudI')
+bot.run('token')
 
 ################################################################################
 
