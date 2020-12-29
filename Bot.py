@@ -4,25 +4,26 @@ import time
 
 class MyClient(discord.Client):
     async def on_ready(self):
-        print('Logged on as', self.user)
-
+        print('Logged on as', self.user, "\n")
+    
     async def on_message(self, message):
         # don't respond to ourselves
         if message.author == self.user:
             return
-
-        print(message.author)
-        print(message.created_at)
-        print(message.content)
-        print(time.strftime('%Y-%m-%d %M:%S', time.localtime(time.time())))
-        print()
+        
+        message_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+        
+        print(message.author) # 메세지 친 사람
+        print(message.created_at) # 메세지 친 시각
+        print(message.content) # 메세지 내용
+        print(message_time) # 현재 컴퓨터 시각
         
         # if message.content == 'ping':
         #     await message.channel.send('pong')
 
         # elif message.content == '응~':
         #     await message.channel.send('아니야~')
-
+        
         # else:
         #     chat = random.randrange(1,4) 
         #     if chat == 1:
@@ -37,15 +38,15 @@ client.run('token')
 
 ################################################################################
 
-from discord.ext import commands
+# from discord.ext import commands
 
-bot = commands.Bot(command_prefix='>')
+# bot = commands.Bot(command_prefix='>')
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
+# @bot.command()
+# async def ping(ctx):
+#     await ctx.send('pong')
 
-bot.run('token')
+# bot.run('token')
 
 ################################################################################
 
